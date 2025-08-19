@@ -8,6 +8,8 @@ export default async ({ req, res, log, error }) => {
 
   const databases = new Databases(client);
 
+  console.log(req)
+
   const body = req.bodyJson;
     
   try {
