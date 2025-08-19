@@ -3,7 +3,7 @@ import { Client, Databases, ID } from "node-appwrite";
 export default async ({ req, res, log, error }) => {
   const client = new Client()
     .setEndpoint(process.env.APPWRITE_FUNCTION_API_ENDPOINT)
-    .setProject("68a47889001b14e0eb8c")
+    .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
     .setKey(req.headers["x-appwrite-key"]);
 
   const databases = new Databases(client);
@@ -12,8 +12,8 @@ export default async ({ req, res, log, error }) => {
     
   try {
     const res = await databases.createDocument(
-      process.env.DATABASE_ID,
-      process.env.COLLECTION_ID,
+      "sample",
+      "68a47889001b14e0eb8c",
       ID.unique(),
       body
     );
