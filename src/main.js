@@ -11,8 +11,8 @@ export default async ({ req, res, log, error }) => {
     
   try {
     const res = await databases.createDocument(
-      "sample",
-      "68a47889001b14e0eb8c",
+      process.env.DATABASE_ID,
+      process.env.COLLECTION_ID,
       ID.unique(),
       body
     );
