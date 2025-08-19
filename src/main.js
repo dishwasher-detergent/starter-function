@@ -7,9 +7,6 @@ export default async ({ req, res, log, error }) => {
     .setKey(req.headers["x-appwrite-key"]);
 
   const databases = new Databases(client);
-
-  console.log(req)
-
   const body = req.bodyJson;
     
   try {
